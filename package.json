@@ -1,0 +1,39 @@
+{
+  "name": "standard_api_codebase_setup",
+  "version": "0.1.0",
+  "description": "a simple node js micro",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir built",
+    "restart": "rimraf built && npm run build && npm run start",
+    "start": "node built/app.js",
+    "serve": "nodemon --exec npm run restart"
+  },
+  "keywords": [
+    "auth",
+    "micro",
+    "node",
+    "mongo"
+  ],
+  "author": "Ahmad Mirzaei (@amdev)",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-core": "^6.26.3",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.2"
+  }
+}
