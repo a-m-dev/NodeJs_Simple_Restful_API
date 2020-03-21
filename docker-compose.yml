@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  dev:
+    image: "affside_auth_img"
+    build:
+      context: .
+    container_name: affside_auth_container
+    # working_dir: /usr/src/app
+    # volumes:
+    #   - .:/usr/src/app/
+    ports:
+      - 3010:3010
+    restart: always
+    depends_on:
+      - affside_DB
+    networks:
+      - affside_network
+
+  affside_DB:
+    image: mongo
+    container_name: affside_db_container
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongo_admin
+      - MONGO_INITDB_ROOT_PASSWORD=mongo_admin_secret_key
+    ports:
+      - 27017:27017
+    volumes:
+      - ./__MONGO_DATA__:/data/db
+    networks:
+      - affside_network
+
+networks:
+  affside_network:
+    driver: bridge

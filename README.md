@@ -13,3 +13,5 @@ this is just a simple repo for you to see how nodejs basically sets up for a sta
 ### build
 
 you are using ESM mosules in the entire project, which enabels you to use `import/export`, `async/await` and many more features of ES6 in this project, so , in order to transpile that to regular js you need to run `npm run build`; this command would create a `built` folder in root directory and actually you can create a docker file to spins up a node js with an nginx and runs the content of that folder and there we go, you got your backend system!
+
+also notice that in `mongoConnect.js` remember to change the connection string when you build and want to deploy, any changes in the `docker-compose.yml` file in order to improve the usablity would be appritiated to send some pull request to me!

@@ -30,10 +30,8 @@ app.use(morgan("dev"));
 // set up routing
 app.use(`/api/${AppConfig.apiVersions["v1.0"]}/author`, AuthorRouter);
 
-// error handling -> detect not route match
+// error handling
 app.use(noRouteMatch);
-
-// send error if some thing else was the case
 app.use(globalErrorHandler);
 
 // connect to DB then run app
@@ -48,7 +46,10 @@ app.use(globalErrorHandler);
       `);
     });
   } catch (e) {
-    console.log("Cannot connect to Mongo DB", e);
-    process.exit(1);
+    console.log(
+      ">>>>>> Cannot connect to Mongo DB",
+      JSON.stringify(e, null, 2)
+    );
+    // process.exit(1);
   }
 })();
