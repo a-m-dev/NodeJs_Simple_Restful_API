@@ -4,8 +4,8 @@
   "description": "a simple node js micro",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --out-dir built",
     "restart": "rimraf built && npm run build && npm run start",
+    "build": "babel src --out-dir built",
     "start": "node built/app.js",
     "serve": "nodemon --exec npm run restart"
   },
@@ -33,6 +33,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "babel-core": "^6.26.3",
+    "babel-preset-minify": "^0.5.1",
     "nodemon": "^2.0.2",
     "rimraf": "^3.0.2"
   }

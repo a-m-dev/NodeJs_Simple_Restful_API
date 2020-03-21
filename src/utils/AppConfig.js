@@ -6,7 +6,9 @@ const AppConfig = {
     "v1.0": "v1.0"
   },
   buildVersion: pkg.version,
-  mongoDBurl: "mongodb://localhost:27017",
+  // mongoAdmin: "mongo_admin",
+  // mongoAdminPassword: "mongo_admin_secret_key",
+  mongoDBurl: `mongodb://localhost:27017`,
   DatabaseName: "rest_standard_api"
 };
 

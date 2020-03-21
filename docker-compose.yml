@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  dev:
+    image: "node_rest_dev_img_1"
+    build:
+      context: .
+    container_name: node_rest_dev_1
+    # working_dir: /usr/src/app
+    # volumes:
+    #   - .:/usr/src/app/
+    ports:
+      - "3010:3010"
+    restart: always
+    depends_on:
+      - database_mongoDB
+    # networks:
+    #   - node_rest_network
+
+  database_mongoDB:
+    image: mongo
+    container_name: database_mongoDB_1
+    # environment:
+    #   - MONGO_INITDB_ROOT_USERNAME=mongo_admin
+    #   - MONGO_INITDB_ROOT_PASSWORD=mongo_admin_secret_key
+    ports:
+      - "27017:27017"
+    # volumes:
+    #   - ./__MONGO_DATA__:/data/db
+    # networks:
+    #   - node_rest_network
+# networks:
+#   node_rest_network:
+#     driver: bridge
+#     external: true

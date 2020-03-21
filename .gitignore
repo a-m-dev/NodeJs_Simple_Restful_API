@@ -1,5 +1,6 @@
 # build
 built
+__MONGO_DATA__
 
 # Logs
 logs

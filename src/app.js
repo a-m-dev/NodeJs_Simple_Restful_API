@@ -44,7 +44,10 @@ app.use(globalErrorHandler);
       console.log("Base API Standard Micro avaliable of http://localhost:3010");
     });
   } catch (e) {
-    console.log("Cannot connect to Mongo DB", e);
-    process.exit(1);
+    console.log(
+      ">>>>>> Cannot connect to Mongo DB",
+      JSON.stringify(e, null, 2)
+    );
+    // process.exit(1);
   }
 })();
