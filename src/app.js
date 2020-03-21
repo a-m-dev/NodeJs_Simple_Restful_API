@@ -41,7 +41,11 @@ app.use(globalErrorHandler);
   try {
     await connect();
     app.listen(AppConfig.PORT, () => {
-      console.log("Base API Standard Micro avaliable of http://localhost:3010");
+      console.log(`
+    
+        Affside Auth Micro is avaliable of http://localhost:3010
+      
+      `);
     });
   } catch (e) {
     console.log("Cannot connect to Mongo DB", e);

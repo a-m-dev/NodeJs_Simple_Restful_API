@@ -1,7 +1,7 @@
 {
-  "name": "standard_api_codebase_setup",
+  "name": "01_affside_auth_micro",
   "version": "0.1.0",
-  "description": "a simple node js micro",
+  "description": "Affside Auth Micro micro",
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir built",
