@@ -35,9 +35,9 @@ app.use(noRouteMatch);
 app.use(globalErrorHandler);
 
 // connect to DB then run app
-(async function() {
+(async function () {
   try {
-    await connect();
+    // await connect();
     app.listen(AppConfig.PORT, () => {
       console.log(`
     
